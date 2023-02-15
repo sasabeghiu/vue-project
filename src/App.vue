@@ -2,7 +2,6 @@
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
 import Test from './components/test.vue'
-import StockList from './components/StockList.vue'
 </script>
 
 <template>
@@ -16,8 +15,7 @@ import StockList from './components/StockList.vue'
 
   <main>
     <HelloWorld />
-    <!-- <Test /> -->
-    <!-- <StockList /> -->
+    <Test />
   </main>
 </template>
 
