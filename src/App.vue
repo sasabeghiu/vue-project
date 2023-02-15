@@ -1,7 +1,6 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
-import Test from './components/test.vue'
 import StockList from './components/StockList.vue'
 </script>
 
@@ -15,9 +14,7 @@ import StockList from './components/StockList.vue'
   </header>
 
   <main>
-    <HelloWorld />
-    <!-- <Test /> -->
-    <!-- <StockList /> -->
+    <StockList />
   </main>
 </template>
 
