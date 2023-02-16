@@ -1,37 +1,30 @@
 <template>
-    <div>
-        <h1>StockList</h1>
-        <table class="table">
-            <thead>
-                <td>Name</td>
-                <td>Price</td>
-            </thead>
-            <tbody>
-                <tr v-for="stock in stocks" :key="stock.name">
-                    <td>{{ stock.name }}</td>
-                    <td>
-                        <b :class="{ 'green': stock.price > stock.previousPrice, 'red': stock.price < stock.previousPrice }">{{ stock.currency }} {{ stock.price.toFixed(2) }}</b>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <button @click="updatePrices()">Update</button>
-    </div>
+    <h1 class="pt-5">Stock list</h1>
+    <div class="row">
+        <stock-item v-for="stock in stocks" :stock="stock" :key="stock.name" :name="stock.name" :currency="stock.currency"
+            :price="stock.price" :previousPrice="stock.previousPrice" @buy="buyStock" />
+</div>
 </template>
 
 <script>
+import StockItem from './StockItem.vue';
+
 export default {
+
     name: "StockList",
+    components: {
+        StockItem
+    },
     data() {
         return {
             stocks: [
                 { name: "BMW", price: 61.05, previousPrice: 0, currency: "€" },
                 { name: "Caterpillar", price: 146.49, previousPrice: 0, currency: "$" },
                 { name: "AMD", price: 76.5, previousPrice: 0, currency: "$" },
-                { name: "Tesla", price: 4.583, previousPrice: 0, currency: "$" },
+                { name: "Gazprom", price: 4.583, previousPrice: 0, currency: "$" },
             ],
             portfolio: [],
-        }
+        };
     },
     methods: {
         updatePrices() {
@@ -43,25 +36,16 @@ export default {
                 }
             });
         },
+        buyStock(name, amount) {
+            alert(name + " x" + amount);
+        },
     },
     mounted() {
         setInterval(() => {
-            this.updatePrices()
-        }, 1000)
-    }
-}
+            this.updatePrices();
+        }, 1000);
+    },
+};
 </script>
 
-<style scoped>
-td {
-    border: solid white 1px;
-}
-
-.red {
-    color: red;
-}
-
-.green {
-    color: greenyellow;
-}
-</style>
+<style scoped></style>
