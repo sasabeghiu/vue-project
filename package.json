@@ -12,6 +12,9 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",
+    "bootstrap": "^4.0.0-beta",
+    "jquery": "^3.6.3",
+    "popper.js": "^1.16.1",
     "vite": "^4.0.0"
   }
 }

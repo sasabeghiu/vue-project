@@ -25,7 +25,7 @@ export default {
         return {
             amount: 0
         }
-    }
+    }   
 };
 </script>
 
@@ -33,7 +33,6 @@ export default {
 .up {
     color: green;
 }
-
 .down {
     color: red;
 }

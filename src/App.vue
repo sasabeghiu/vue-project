@@ -1,5 +1,6 @@
 <script>
 import StockList from "./components/StockList.vue";
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 export default {
   name: "App",
